@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+    <title>Kertrendezés</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">Zöld Övezet Fűnyírás és Sövényvágás        </div>
+        <div class="navbar">
+            <a href="index.html">Kezdőlap</a>
+            <div id="dropdown-id" class="dropdown">
+                <div class="dropdown-button">Szolgáltatások&nbsp;<i class="arrow"></i></div>
+                <div class="dropdown-content">
+                    <a href="#"  class="selected">Fűnyírás</a>
+                    <a href="serv2.html">Sövény</a>
+                </div>
+            </div>
+            <a href="contact.html">Lépj kapcsolatba!</a>
+        </div>
+    </div>
+
+    <header class="c-header">
+        <h1>Zöld Övezet Fűnyírás és Sövényvágás</h1>
+        <p>Üdvözöllek a Zöld Övezet Fűnyírás és Sövényvágás világában!        </p>
+        <p>Itt, a Balaton varázslatos környékén, ahol a természet szépsége találkozik az ápolt kertek művészetével, örömmel vállalom a gondos fűnyírást és precíz sövényvágást. A Zöld Övezet csapata elkötelezett abban, hogy segítsen fenntartani és fokozni kerted szépségét.        </p>
+    </header>
+
+    <section class="c-serv">
+        <div id="calculator-container">
+            <h1>Ár Kalkulátor</h1>
+    
+            <label for="squareMeters">Négyzetméter (max 2000):</label>
+            <input type="number" id="squareMeters" min="0" max="2000" value="100">
+            <br>
+            <label for="serviceType">Szolgáltatás típusa:</label>
+            <div class="radio">
+                <div class="option">
+                    <input type="radio" id="mowing" name="serviceType" value="mowing" checked>
+                    <label for="mowing">Fűnyírás</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="trimming" name="serviceType" value="trimming">
+                    <label for="trimming">Sövényvágás</label>
+                </div>
+                <div class="option">
+                    <input type="radio" id="both" name="serviceType" value="both">
+                    <label for="both">Mindkettő</label>
+                </div>
+            </div>
+            <label for="city">Város: (Egyéni ajánlatért a "Lépj kapcsolatba"-menüponton)</label>
+            <select id="city">
+                <option value="category1">Balatonszemes</option>
+                <option value="category2">Balatonlelle</option>
+                <option value="category3">Balatonboglár</option>
+            </select>
+            <br>
+            <button onclick="calculatePrice()">Ár Kiszámolása</button>
+
+            <h2>Eredmény:</h2>
+            <p id="result"> Számold ki az árat az "Ár Kiszámolása" gombbal!</p>
+        </div>
+        <div>
+            <h2>Fűnyírás</h2>
+            <p>A fűnyírás egy olyan tevékenység, amelynek fontos szerepe van a kertészeti és tájrendezési gyakorlatokban. Az esztétikus kertek és gondozott pázsitok nemcsak szemet gyönyörködtető látványt nyújtanak, hanem növelik az ingatlan értékét és kellemes környezetet teremtenek a mindennapi élet számára.</p>
+            <p>A fűnyírásnak számos előnye van. Az egyik legnyilvánvalóbb az esztétikai szempontból történő javulás. A rendszeresen nyírt fűterület rendezett és ápolt megjelenést kölcsönöz a kertnek, udvarnak vagy bármely más területnek. Emellett a fűnyírás segít az egyenletes növekedés fenntartásában, megakadályozza a gyomok elburjánzását, és lehetővé teszi a napfény, a levegő és a víz hatékonyabb eloszlását a fűgyökerkek között.</p>
+            <p>A fűnyírás nem csak esztétikai szempontból fontos, hanem a növények egészségének és a kert egészének fenntartása szempontjából is. A rendszeres nyírás serkenti a fű növekedését, segít megelőzni a betegségeket és a kártevők terjedését. Emellett javítja a fű színét és textúráját, és lehetővé teszi, hogy a terület hasznosabb és élvezetesebb legyen.</p>
+            <p>A Balaton déli partján, a gyönyörű környezetben érdemes különös figyelmet szentelni a kert gondozásának. Egy jól karbantartott kert vagy udvar nemcsak otthonossá és kellemessé teszi a környezetet, hanem hozzájárul a Balaton-part szépségének és vonzerejének megőrzéséhez. </p>
+            <p>Ha nincs elég időd vagy energiád a fűnyírással való foglalkozáshoz, vagy egyszerűen csak szeretnéd a szakértőkre bízni a dolgot, szívesen vállalom a fűnyírást a Balaton déli partján. Professzionális szolgáltatásaimmal garantáltan gondoskodom a pázsitod rendezettségéről, hogy Te csak élvezhesd a gyönyörű környezetet. </p>
+            <p>A szolgáltatásaim magukba foglalják a rendszeres fűnyírást, a gyeptrágyázást és egyéb gondozási tevékenységeket, amelyek segítenek megőrizni a kert és az udvar szépségét. Így nyugodtan élvezheted a Balaton déli partjának lenyűgöző panorámáját, anélkül, hogy aggódnod kellene a fű hossza miatt. </p>
+            <p>Ha szeretnéd élvezni a gondozott kertek és pázsitok nyújtotta előnyöket a Balaton déli partján, fordulj hozzám bizalommal, és szívesen vállalom a fűnyírást és kertápolást. Legyen része a gyönyörű környezetnek, amelyet egy gondosan karbantartott kert vagy udvar nyújt!</p>
+        </div>
+    </section>
+
+    <footer class="c-footer">
+        <div>
+            <p>Az oldal nem reprezentál valós vállalatot, csupán beadandó feladatnak készült.</p>
+            <p> Website by: Szabolcs Sztaniszláv</p>
+        </div>
+    </footer>
+</body>
+
+</html>
