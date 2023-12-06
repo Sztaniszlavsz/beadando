@@ -1,7 +1,8 @@
 body {
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto';
     line-height: 1.6em;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar {
@@ -183,12 +184,6 @@ body {
     color: #ECE3CE;
 }
 
-body {
-    font-family: 'Roboto';
-    line-height: 1.6em;
-    padding: 0;
-    margin: 0;
-}
 
 h1 {
     font-size: calc(130% + 1vw);

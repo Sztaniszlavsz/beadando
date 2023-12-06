@@ -31,8 +31,18 @@ function calculatePrice() {
     const serviceType = document.querySelector('input[name="serviceType"]:checked').value;
     const cityCategory = document.getElementById('city').value;
 
+    let basePrice;
+    if (squareMeters <= 500) {
+        basePrice = 12000;
+    } else if (squareMeters > 500 && squareMeters <= 1000) {
+        basePrice = 20000;
+    } else if (squareMeters > 1000 && squareMeters <= 2000) {
+        basePrice = 32000;
+    } else if (squareMeters > 2000){
+        basePrice = 0 
+    }
+    
     let price1;
-
     switch (cityCategory) {
         case 'category1':
             price1 = 1;
@@ -56,18 +66,6 @@ function calculatePrice() {
         case 'both':
             price2 = 1.5;
             break;
-    }
-
-    let ok = 1
-    let basePrice;
-    if (squareMeters <= 500) {
-        basePrice = 12000;
-    } else if (squareMeters > 500 && squareMeters <= 1000) {
-        basePrice = 20000;
-    } else if (squareMeters > 1000 && squareMeters <= 2000) {
-        basePrice = 32000;
-    } else if (squareMeters > 2000){
-        basePrice = 0 
     }
 
     if (basePrice != 0){
