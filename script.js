@@ -31,49 +31,49 @@ function calculatePrice() {
     const serviceType = document.querySelector('input[name="serviceType"]:checked').value;
     const cityCategory = document.getElementById('city').value;
 
-    let priceMultiplier;
+    let price1;
 
     switch (cityCategory) {
         case 'category1':
-            priceMultiplier = 1;
+            price1 = 1;
             break;
         case 'category2':
-            priceMultiplier = 1.1;
+            price1 = 1.1;
             break;
         case 'category3':
-            priceMultiplier = 1.2;
+            price1 = 1.2;
             break;
     }
 
-    let basePrice;
+    let price2;
     switch (serviceType) {
         case 'mowing':
-            basePrice = 1.3;
+            price2 = 1.3;
             break;
         case 'trimming':
-            basePrice = 0.6;
+            price2 = 0.6;
             break;
         case 'both':
-            basePrice = 1.5;
+            price2 = 1.5;
             break;
     }
 
     let ok = 1
-    let squareMeterRate;
+    let price3;
     if (squareMeters <= 500) {
-        squareMeterRate = 12000;
+        price3 = 12000;
     } else if (squareMeters > 500 && squareMeters <= 1000) {
-        squareMeterRate = 20000;
+        price3 = 20000;
     } else if (squareMeters > 1000 && squareMeters <= 2000) {
-        squareMeterRate = 32000;
+        price3 = 32000;
     } else if (squareMeters > 2000){
-        ok = 0 
+        price3 = 0 
     }
 
-    if (ok == 1){
-        const totalPrice = basePrice * priceMultiplier * squareMeterRate;
+    if (price3 != 0){
+        const totalPrice = price2 * price1 * price3;
         document.getElementById('result').innerText = `Az összes költség: ${Math.ceil(totalPrice)} Ft`;
-    } else if (ok == 0){
+    } else if (price3 == 0){
         document.getElementById('result').innerText = `A megadott négyzetméter túl nagy!`;
     }
 }

@@ -4,7 +4,7 @@ body {
     line-height: 1.6em;
 }
 
-.header {
+.navbar {
     background: linear-gradient(to left, #3A4D39, #739072);
     padding: 10px;
     display: flex;
@@ -20,14 +20,14 @@ body {
     margin-bottom: 10px;
 }
 
-.navbar {
+.nav {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.navbar a,
+.nav a,
 .dropdown-content a,
 .dropdown-button {
     color: #ECE3CE;
@@ -42,7 +42,7 @@ body {
     margin: 0 3px;
 }
 
-.navbar a:hover,
+.nav a:hover,
 .dropdown-content a:hover,
 .dropdown-button.hovered,
 .dropdown-button.selected {
@@ -126,7 +126,7 @@ body {
     border-radius: 8px;
 }
 
-.navbar a.selected,
+.nav a.selected,
 .dropdown-content a.selected {
     color: #3A4D39;
     background-color: #ECE3CE;
@@ -138,8 +138,8 @@ body {
     display: block;
 }
 
-.c-posts,
-.c-serv {
+.article,
+.serv {
     background-color: #739072;
     color: #ECE3CE;
     display: flex;
@@ -157,7 +157,7 @@ body {
     }
 }
 
-.c-header {
+.header {
     background-image: url(images/back.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -173,12 +173,12 @@ body {
     line-height: 1.6em;
 }
 
-.c-footer {
+.footer {
     background-color: #3A4D39;
     padding: 10px;
 }
 
-.c-footer p {
+.footer p {
     text-align: center;
     font-weight: 300;
     color: #ECE3CE;
@@ -202,7 +202,7 @@ h2 {
 }
 
 
-.c-btn {
+.item_button {
     color: #3A4D39;
     display: inline-block;
     border-bottom: 4px solid #ECE3CE;
@@ -249,14 +249,14 @@ hr {
     height: 500px;
 }
 
-.c-serv {
+.serv {
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
     align-items: center;
 }
 
-.c-form {
+.form {
     display: flex;
     flex-direction: column-reverse;
     flex-wrap: nowrap;
@@ -264,7 +264,7 @@ hr {
     background-color: #739072;
 }
 
-.c-serv #calculator-container {
+.serv #calculator-container {
     background-color: #4F6F52;
     padding: 20px;
     border-radius: 8px;
@@ -273,23 +273,23 @@ hr {
     margin-right: 50px;
 }
 
-.c-serv div {
+.serv div {
     width: 100%;
 }
 
-.c-serv h1,
-.c-serv h2 {
+.serv h1,
+.serv h2 {
     color: #ECE3CE;
 }
 
-.c-serv label {
+.serv label {
     color: #ECE3CE;
     display: block;
     margin-bottom: 8px;
 }
 
-.c-serv input[type="number"],
-.c-serv select {
+.serv input[type="number"],
+.serv select {
     width: 70%;
     padding: 10px;
     margin-bottom: 15px;
@@ -299,7 +299,7 @@ hr {
     color: #ECE3CE;
 }
 
-.c-serv .radio {
+.serv .radio {
     display: flex;
     margin-bottom: 15px;
 
@@ -313,7 +313,7 @@ hr {
     }
 }
 
-.c-serv button {
+.serv button {
     background-color: #739072;
     color: #ECE3CE;
     padding: 10px 15px;
@@ -324,11 +324,11 @@ hr {
     margin-bottom: 10px;
 }
 
-.c-serv button:hover {
+.serv button:hover {
     background-color: #4F6F52;
 }
 
-.c-serv #result {
+.serv #result {
     margin-top: 20px;
     font-weight: bold;
     color: #ECE3CE;
@@ -386,11 +386,11 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (min-width: 600px) and (max-width: 768px) {
-    .c-serv #calculator-container {
+    .serv #calculator-container {
         width: 80%;
     }
 
-    .c-header {
+    .header {
         background-size: 250%;
         background-attachment: local;
         margin: 0;
@@ -398,19 +398,19 @@ input[type="submit"]:hover {
 }
 
 @media only screen and (max-width: 600px) {
-    .c-serv #calculator-container {
+    .serv #calculator-container {
         width: 80%;
         margin: 0;
     }
 
-    .c-header {
+    .header {
         background-size: 700%;
         background-attachment: local;
     }
 }
 
 @media only screen and (min-width: 768px) {
-    .header {
+    .navbar {
         padding: 10px;
         display: flex;
         justify-content: space-between;
@@ -423,14 +423,14 @@ input[type="submit"]:hover {
         margin-bottom: 0px;
     }
 
-    .navbar {
+    .nav {
         display: flex;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
     }
 
-    .c-serv {
+    .serv {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
