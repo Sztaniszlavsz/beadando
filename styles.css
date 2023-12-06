@@ -161,13 +161,12 @@ body {
     background-image: url(images/back.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-size: 100% 100%;
+    background-size: 700%;
     font-size: 900;
     color: #ECE3CE;
     text-align: center;
     padding: 2em;
     font-family: 'Open Sans', sans-serif;
-    background-size: 200%;
     font-size: 1.4em;
     font-weight: 600;
     line-height: 1.6em;
@@ -269,8 +268,8 @@ hr {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 60%;
-    margin-right: 50px;
+    width: 80%;
+    margin: 0;
 }
 
 .serv div {
@@ -342,7 +341,7 @@ form {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
+    width: 80%;
     flex-direction: column;
     align-items: center;
 }
@@ -395,19 +394,12 @@ input[type="submit"]:hover {
         background-attachment: local;
         margin: 0;
     }
-}
 
-@media only screen and (max-width: 600px) {
-    .serv #calculator-container {
-        width: 80%;
-        margin: 0;
-    }
-
-    .header {
-        background-size: 700%;
-        background-attachment: local;
+    form{
+        width: 60%;
     }
 }
+
 
 @media only screen and (min-width: 768px) {
     .navbar {
@@ -416,6 +408,11 @@ input[type="submit"]:hover {
         justify-content: space-between;
         flex-direction: row;
         padding-right: 0px;
+    }
+
+    .header {
+        background-attachment: fixed;
+        background-size: 200%;
     }
 
     .logo {
@@ -435,5 +432,15 @@ input[type="submit"]:hover {
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: flex-start;
+    }
+
+    .serv #calculator-container {
+        width: 60%;
+        margin-right: 50px;
+    }
+
+
+    form{
+        width: 40%;
     }
 }
