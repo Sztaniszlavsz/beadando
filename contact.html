@@ -4,14 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Szabolcs Sztaniszláv">
     <link rel="stylesheet" href="styles.css">
+    <link rel="shortcut icon" href="images/fav.png">
     <script src="script.js"></script>
-    <title>Kertrendezés</title>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="jquery-validation-1.19.5/dist/jquery.validate.js"></script>
+    <title>Zöld Övezet</title>
 </head>
 
 <body>
     <div class="header">
-        <div class="logo">Zöld Övezet Fűnyírás és Sövényvágás        </div>
+        <div class="logo">Zöld Övezet Fűnyírás és Sövényvágás </div>
         <div class="navbar">
             <a href="index.html">Kezdőlap</a>
             <div id="dropdown-id" class="dropdown">
@@ -21,42 +25,98 @@
                     <a href="serv2.html">Sövény</a>
                 </div>
             </div>
-            <a href="#"  class="selected">Lépj kapcsolatba!</a>
+            <a href="#" class="selected">Lépj kapcsolatba!</a>
         </div>
     </div>
 
     <header class="c-header">
         <h1>Zöld Övezet Fűnyírás és Sövényvágás</h1>
-        <p>Üdvözöllek a Zöld Övezet Fűnyírás és Sövényvágás világában!        </p>
-        <p>Itt, a Balaton varázslatos környékén, ahol a természet szépsége találkozik az ápolt kertek művészetével, örömmel vállalom a gondos fűnyírást és precíz sövényvágást. A Zöld Övezet csapata elkötelezett abban, hogy segítsen fenntartani és fokozni kerted szépségét.        </p>
+        <p>Üdvözöllek a Zöld Övezet Fűnyírás és Sövényvágás világában! </p>
+        <p>Itt, a Balaton varázslatos környékén, ahol a természet szépsége találkozik az ápolt kertek művészetével,
+            örömmel vállalom a gondos fűnyírást és precíz sövényvágást. A Zöld Övezet csapata elkötelezett abban, hogy
+            segítsen fenntartani és fokozni kerted szépségét. </p>
     </header>
 
-    <section class="c-posts">
-        <article class="c-posts__item">
-            <h2>Fűnyírást vállalok</h2>
-            <p>Örömmel tájékoztatlak, hogy fűnyírási szolgáltatást kínálok, hogy gondtalanul élvezhesd kerted szépségét. Tapasztalatom és precizitásom garancia arra, hogy zöld területed mindig ápolt és rendezett legyen.
-            <br>Részletes információkért és egyedi ajánlatért kérlek, kattints a tovább gombra. Számíthatsz rá, hogy kerted olyan kezekben lesz, amelyek törődnek a részletekkel.</p>
-            <p><a href="#" class="c-btn">Tovább</a></p>
-        </article>
-        <hr>
-        <article class="c-posts__item">
-            <h2>Sövényvágás</h2>
-            <p>Egy rendezett és ápolt sövény nem csak esztétikus, hanem kikapcsolódást és friss levegőt is nyújt. A sövényvágás terén is tapasztalatommal és precizitásommal garantálom, hogy kerted minden szezonban a legjobb formáját mutassa.
-                <br>
-                Kattints a tovább gombra, hogy megtudj többet a szolgáltatásaimról és hogyan tehetem szebbé kertedet. Ne hagyd, hogy a kerti munkák terhe elvegye az élvezetét – bízd rám, és élvezd a gyönyörű kert nyújtotta örömöket!</p>
-            <p><a href="#" class="c-btn">Tovább</a></p>
-        </article>
-        <hr>
-        <article class="c-posts__item">
-            <h2>Lépj kapcsolatba!</h2>
-            <p>Bátran keress fel, ha kérdésed adódott vagy részletesebben szeretnéd egyeztetni kerted gondozását! Az egyedi árkalkulátorral könnyedén megtervezhetjük a számodra legmegfelelőbb szolgáltatást, hogy kerted mindig a legjobb formáját mutassa.
-                <br>
-                Kattints a tovább gombra, és töltsd ki az űrlapot, hogy pontosan megismerjem az elvárásaidat. Számíthatsz rám, hogy minden részletre odafigyelek, és együtt dolgozunk azon, hogy kerted a számodra ideális módon legyen gondozva.</p>
-            <p><a href="#" class="c-btn">Tovább</a></p>
-        </article>
-        <hr>
-    </section>
+    <section class="c-form">
+        <form action="http://szamtud.uni-corvinus.hu/~blang/receive.php" method="post" id="myform" novalidate>
 
+
+            <label for="vezeteknev">Vezetéknév:</label>
+            <input type="text" id="vezeteknev" name="vezeteknev"><br>
+
+            <label for="keresztnev">Keresztnév:</label>
+            <input type="text" id="keresztnev" name="keresztnev"><br>
+
+            <label for="telefonszam">Telefonszám:</label>
+            <input type="tel" id="telefonszam" name="telefonszam" value="+36 "><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br>
+
+            <label for="hely">Hol szeretné igénybe venni a szolgáltatást?</label>
+            <select id="hely" name="hely">
+                <option value="bsz">Balatonszemes</option>
+                <option value="BL">Balatonlelle</option>
+                <option value="BB">Balatonboglár</option>
+            </select><br>
+
+            <label for="szolgaltatas">Milyen szolgáltatást szeretne igénybe venni?</label>
+            <label for="mower"> Fűnyírás</label>
+            <input type="checkbox" id="mower" name="checkbox" value="1" checked>
+
+            <label for="trimming"> Sövényvágás</label>
+            <input type="checkbox" id="trimming" name="checkbox" value="1">
+            <label for="checkbox" class="error"></label><br>
+
+            <label for="kertmeret">Kert mérete négyzetméterben:</label>
+            <input type="number" id="kertmeret" name="kertmeret" min="100" placeholder="min. 100"><br>
+
+            <label for="datum">Dátum:</label>
+            <input type="date" id="datum" name="datum"><br>
+
+            <label for="megjegyzes">Egyéb megjegyzés:</label>
+            <textarea id="megjegyzes" name="megjegyzes" rows="4" cols="50"></textarea><br>
+
+            <input type="submit" value="Igénylés elküldése">
+
+        </form>
+    </section>
+    <script>
+        $(document).ready(function () {
+            $("#myform").validate({
+                rules: {
+                    vezeteknev: "required",
+                    keresztnev: "required",
+                    tel: "required",
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    checkbox: "required",
+                    kertmeret: "required",
+                    datum: "required"
+                },
+
+                messages: {
+                    vezeteknev: " Írja be Vezetéknevét!",
+                    keresztnev: " Írja be a Keresztnevét!",
+                    tel: "Írja be a telefonszámát!",
+                    email: {
+                        required: "Kérem valós email címet adjon meg!",
+                        email: "Kérem érvényes email címet adjon meg!"
+                    },
+                    checkbox: "Válasszon minimum 1 szolgáltatást!",
+                    kertmeret: "Adja meg a kertje méretét!",
+                    datum: "Adjon meg egy dátum, hogy mikor szeretné a kezdést!",
+                },
+
+                submitHandler: function (form) {
+                    form.submit();
+                }
+            });
+        })
+
+    </script>
     <footer class="c-footer">
         <div>
             <p>Az oldal nem reprezentál valós vállalatot, csupán beadandó feladatnak készült.</p>
