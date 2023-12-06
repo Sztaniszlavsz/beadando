@@ -59,21 +59,21 @@ function calculatePrice() {
     }
 
     let ok = 1
-    let price3;
+    let basePrice;
     if (squareMeters <= 500) {
-        price3 = 12000;
+        basePrice = 12000;
     } else if (squareMeters > 500 && squareMeters <= 1000) {
-        price3 = 20000;
+        basePrice = 20000;
     } else if (squareMeters > 1000 && squareMeters <= 2000) {
-        price3 = 32000;
+        basePrice = 32000;
     } else if (squareMeters > 2000){
-        price3 = 0 
+        basePrice = 0 
     }
 
-    if (price3 != 0){
-        const totalPrice = price2 * price1 * price3;
+    if (basePrice != 0){
+        const totalPrice = price2 * price1 * basePrice;
         document.getElementById('result').innerText = `Az összes költség: ${Math.ceil(totalPrice)} Ft`;
-    } else if (price3 == 0){
+    } else if (basePrice == 0){
         document.getElementById('result').innerText = `A megadott négyzetméter túl nagy!`;
     }
 }

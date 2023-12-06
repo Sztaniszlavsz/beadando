@@ -40,44 +40,44 @@
     </header>
 
     <section class="form">
-        <form action="http://szamtud.uni-corvinus.hu/~blang/receive.php" method="post" id="myform" novalidate>
+        <form action="http://szamtud.uni-corvinus.hu/receive.php" method="post" id="myform" novalidate>
 
 
-            <label for="vezeteknev">Vezetéknév:</label>
-            <input type="text" id="vezeteknev" name="vezeteknev"><br>
+            <label for="lastname">Vezetéknév:</label>
+            <input type="text" id="lastname" name="lastname"><br>
 
-            <label for="keresztnev">Keresztnév:</label>
-            <input type="text" id="keresztnev" name="keresztnev"><br>
+            <label for="firstname">Keresztnév:</label>
+            <input type="text" id="firstname" name="firstname"><br>
 
-            <label for="telefonszam">Telefonszám:</label>
-            <input type="tel" id="telefonszam" name="telefonszam" value="+36 "><br>
+            <label for="tel">Telefonszám:</label>
+            <input type="tel" id="tel" name="tel" value="+36 "><br>
 
             <label for="email">Email:</label>
             <input type="email" id="email" name="email"><br>
 
-            <label for="hely">Hol szeretné igénybe venni a szolgáltatást?</label>
-            <select id="hely" name="hely">
+            <label for="city">Hol szeretné igénybe venni a szolgáltatást?</label>
+            <select id="city" name="city">
                 <option value="bsz">Balatonszemes</option>
                 <option value="BL">Balatonlelle</option>
                 <option value="BB">Balatonboglár</option>
             </select><br>
 
-            <label for="szolgaltatas">Milyen szolgáltatást szeretne igénybe venni?</label>
-            <label for="mower"> Fűnyírás</label>
-            <input type="checkbox" id="mower" name="checkbox" value="1" checked>
+            <label for="service">Milyen szolgáltatást szeretne igénybe venni?</label>
+            <label for="mowing"> Fűnyírás</label>
+            <input type="checkbox" id="mowing" name="checkbox[]" value="mowing" checked>
 
             <label for="trimming"> Sövényvágás</label>
-            <input type="checkbox" id="trimming" name="checkbox" value="1">
-            <label for="checkbox" class="error"></label><br>
+            <input type="checkbox" id="trimming" name="checkbox[]" value="trimming">
+            <label for="checkbox[]" class="error"></label><br>
 
-            <label for="kertmeret">Kert mérete négyzetméterben:</label>
-            <input type="number" id="kertmeret" name="kertmeret" min="100" placeholder="min. 100"><br>
+            <label for="squareMeters">Kert mérete négyzetméterben:</label>
+            <input type="number" id="squareMeters" name="squareMeters" min="100" placeholder="min. 100"><br>
 
-            <label for="datum">Dátum:</label>
-            <input type="date" id="datum" name="datum"><br>
+            <label for="date">Dátum:</label>
+            <input type="date" id="date" name="date"><br>
 
-            <label for="megjegyzes">Egyéb megjegyzés:</label>
-            <textarea id="megjegyzes" name="megjegyzes" rows="4" cols="50"></textarea><br>
+            <label for="comment">Egyéb megjegyzés:</label>
+            <textarea id="comment" name="comment" rows="4" cols="50"></textarea><br>
 
             <input type="submit" value="Igénylés elküldése">
 
@@ -87,29 +87,32 @@
         $(document).ready(function () {
             $("#myform").validate({
                 rules: {
-                    vezeteknev: "required",
-                    keresztnev: "required",
+                    lastname: "required",
+                    firstname: "required",
                     tel: "required",
                     email: {
                         required: true,
                         email: true
                     },
-                    checkbox: "required",
-                    kertmeret: "required",
-                    datum: "required"
+                    "checkbox[]": {
+					required: true,
+					minlength: 1
+				    },
+                    squareMeters: "required",
+                    date: "required"
                 },
 
                 messages: {
-                    vezeteknev: " Írja be Vezetéknevét!",
-                    keresztnev: " Írja be a Keresztnevét!",
+                    lastname: " Írja be Vezetéknevét!",
+                    firstname: " Írja be a firstnameét!",
                     tel: "Írja be a telefonszámát!",
                     email: {
                         required: "Kérem valós email címet adjon meg!",
                         email: "Kérem érvényes email címet adjon meg!"
                     },
-                    checkbox: "Válasszon minimum 1 szolgáltatást!",
-                    kertmeret: "Adja meg a kertje méretét!",
-                    datum: "Adjon meg egy dátum, hogy mikor szeretné a kezdést!",
+                    "checkbox[]": "Válasszon minimum 1 szolgáltatást!",
+                    squareMeters: "Adja meg a kertje méretét!",
+                    date: "Adjon meg egy dátum, hogy mikor szeretné a kezdést!",
                 },
 
                 submitHandler: function (form) {
